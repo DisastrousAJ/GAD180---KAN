@@ -41,10 +41,10 @@ public class WanderAI : MonoBehaviour
 
     IEnumerator Wander()
     {
-        int rotTime = Random.Range(1, 2);
-        int rotateWait = Random.Range(1, 2);
-        int rotateLorR = Random.Range(1, 2);
-        int walkWait = Random.Range(1, 3);
+        int rotTime = Random.Range(1, 3);
+        int rotateWait = Random.Range(1, 3);
+        int rotateLorR = Random.Range(1, 3);
+        int walkWait = Random.Range(1, 4);
         int walkTime = Random.Range(1, 3);
 
         isWandering = true;

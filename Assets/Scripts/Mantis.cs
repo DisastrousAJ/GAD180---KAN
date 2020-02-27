@@ -10,6 +10,7 @@ public class Mantis : MonoBehaviour
     //2 = avoid predator
 
     public GameObject player;
+
     
 
 
@@ -28,7 +29,7 @@ public class Mantis : MonoBehaviour
         //float distanceToFood = Vector3.Distance(this.transform.position, food.transform.position);
 
 
-        if (distanceToPlayer < 10)
+        if (distanceToPlayer < 5)
         {
             AvoidPlayer();
         }
