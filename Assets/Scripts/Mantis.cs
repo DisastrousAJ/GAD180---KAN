@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Mantis : MonoBehaviour
 {
-    int behaviour = 0;
+    //int behaviour = 0;
     //0 = idle
     //1 = seek food
     //2 = avoid predator
 
-    GameObject player;
+    public GameObject player;
     
 
 
