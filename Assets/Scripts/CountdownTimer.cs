@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
-
 	float currentTime = 0f;
 	float startingTime = 120f;
 
@@ -27,6 +27,17 @@ public class CountdownTimer : MonoBehaviour
 		{
 			currentTime = 0;
 		}
+
+		//Changes the color of the timer text to red when it reaches 10
+		if (currentTime <= 10)
+		{
+			countdownText.color = Color.red;
+		}
+
+		if (currentTime <= 0)
+		{
+			SceneManager.LoadScene(2);
+;		}
 
 	}
 
