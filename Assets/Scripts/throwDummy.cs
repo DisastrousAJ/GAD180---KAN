@@ -26,9 +26,10 @@ public class throwDummy : MonoBehaviour
     }
     void DummyThrow()
     {
+        //Accessing the main camera
         Ray camRay = Mcam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-
+        //getting raycast position of where the player is aiming
         if (Physics.Raycast(camRay, out hit, 100f, layer))
         {
             cursor.SetActive(true);
@@ -39,7 +40,8 @@ public class throwDummy : MonoBehaviour
             Visualize(Velo);
 
             transform.rotation = Quaternion.LookRotation(Velo);
-
+            
+            //Left click spawns projectile at raycast position
             if (Input.GetMouseButtonDown(0))
             {
                 Rigidbody pacifier = Instantiate(dummy, throwPoint.position, Quaternion.identity);
@@ -63,6 +65,8 @@ public class throwDummy : MonoBehaviour
         }
     }
 
+
+    //This calculates the arc projectile tragectory
     Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float time)
     {
 

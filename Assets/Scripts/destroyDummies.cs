@@ -11,7 +11,7 @@ public class destroyDummies : MonoBehaviour
     {
         if (other.gameObject.tag == "Floor")
         {
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 1f);
         }
         else if (other.gameObject.tag == "Baby")
         {
