@@ -12,6 +12,9 @@ public class throwDummy : MonoBehaviour
     public int lineSegment = 30;
     private Camera Mcam;
 
+    public float coolDownShot = 2;
+    public float nextFire = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +43,21 @@ public class throwDummy : MonoBehaviour
             Visualize(Velo);
 
             transform.rotation = Quaternion.LookRotation(Velo);
-            
-            //Left click spawns projectile at raycast position
-            if (Input.GetMouseButtonDown(0))
-            {
-                Rigidbody pacifier = Instantiate(dummy, throwPoint.position, Quaternion.identity);
-                pacifier.velocity = Velo;
 
+            //Left click spawns projectile at raycast position
+            //Fire rate
+            if (Time.time > nextFire)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Rigidbody pacifier = Instantiate(dummy, throwPoint.position, Quaternion.identity);
+                    pacifier.velocity = Velo;
+
+                    nextFire = Time.time + coolDownShot;
+
+                }
             }
+            
         }
         else
         {
