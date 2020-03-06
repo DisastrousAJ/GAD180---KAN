@@ -17,13 +17,11 @@ public class throwDummy : MonoBehaviour
     public float coolDownShot = 2;
     public float nextFire = 0;
 
-   
     // Start is called before the first frame update
     void Start()
     {
         Mcam = Camera.main;
         line.positionCount = lineSegment;
-                
     }
 
     // Update is called once per frame
@@ -36,6 +34,7 @@ public class throwDummy : MonoBehaviour
         //Accessing the main camera
         Ray camRay = Mcam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         //getting raycast position of where the player is aiming
         if (Physics.Raycast(camRay, out hit, 100f, layer))
         {
@@ -59,20 +58,17 @@ public class throwDummy : MonoBehaviour
 
                     //Fire rate counter
                     nextFire = Time.time + coolDownShot;
-
-                    
-                }
-            }
-            
+                }               
+                                  
+            }   
         }
         else
         {
             cursor.SetActive(false);
-
         }
 
     }
-    void Visualize(Vector3 vo)
+    void Visualize(Vector3 vo) //This is for the trajectory linesegment visual
     {
         for (int i = 0; i < lineSegment; i++)
         {
@@ -80,7 +76,6 @@ public class throwDummy : MonoBehaviour
             line.SetPosition(i, pos);
         }
     }
-
 
     //This calculates the arc projectile tragectory
     Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float time)
@@ -101,7 +96,6 @@ public class throwDummy : MonoBehaviour
         result.y = Vy;
 
         return result;
-
 
     }
     Vector3 CalculatePosInTime(Vector3 vo, float time)
