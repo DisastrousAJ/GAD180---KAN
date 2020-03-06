@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class throwDummy : MonoBehaviour
 {
@@ -15,11 +17,13 @@ public class throwDummy : MonoBehaviour
     public float coolDownShot = 2;
     public float nextFire = 0;
 
+   
     // Start is called before the first frame update
     void Start()
     {
         Mcam = Camera.main;
         line.positionCount = lineSegment;
+                
     }
 
     // Update is called once per frame
@@ -53,8 +57,10 @@ public class throwDummy : MonoBehaviour
                     Rigidbody pacifier = Instantiate(dummy, throwPoint.position, Quaternion.identity);
                     pacifier.velocity = Velo;
 
+                    //Fire rate counter
                     nextFire = Time.time + coolDownShot;
 
+                    
                 }
             }
             

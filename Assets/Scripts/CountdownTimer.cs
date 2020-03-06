@@ -13,15 +13,13 @@ public class CountdownTimer : MonoBehaviour
 
 	private void Start()
 	{
-		currentTime = startingTime;
+		currentTime = startingTime;	
 	}
 
 	private void Update()
 	{
 		currentTime -= 1 * Time.deltaTime;
 		countdownText.text = currentTime.ToString("0");
-
-
 
 		if (currentTime <= 0)
 		{
