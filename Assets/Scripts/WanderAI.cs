@@ -7,11 +7,13 @@ public class WanderAI : MonoBehaviour
     public float moveSpeed = 10f;
     public float rotSpeed = 100f;
 
+    
     private bool isWandering = false;
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class WanderAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (isWandering == false)
         {
             StartCoroutine(Wander());
@@ -47,6 +50,7 @@ public class WanderAI : MonoBehaviour
         int walkWait = Random.Range(1, 4);
         int walkTime = Random.Range(1, 3);
 
+
         isWandering = true;
 
         yield return new WaitForSeconds(walkWait);
@@ -69,5 +73,6 @@ public class WanderAI : MonoBehaviour
         isWandering = false;
 
     }
+
 
 }
