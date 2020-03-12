@@ -7,12 +7,24 @@ public class destroyDummies : MonoBehaviour
 {
     public int score;
     public Text scoreText;
+    Text text;
+
+    void Awake()
+    {
+        text = GetComponent<Text>();
+        score = 0;
+    }
 
     void Start()
     {
         score = 0;
         SetScoreText();
         GameObject.Find("ScoreManager");
+    }
+
+    void Update()
+    {
+        text.text = "Score: " + score;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -34,7 +46,6 @@ public class destroyDummies : MonoBehaviour
     //void OnTriggerEnter(Collider other)
 
 
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Floor")
@@ -44,9 +55,7 @@ public class destroyDummies : MonoBehaviour
         else if (other.gameObject.tag == "Baby")
         {
             Destroy(gameObject);
-            score = score + 1;
-            SetScoreText();
-            scoreText.text = "Score: " + score.ToString();
+            score++;
         }
 
     }
