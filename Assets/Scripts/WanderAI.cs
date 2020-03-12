@@ -6,46 +6,39 @@ public class WanderAI : MonoBehaviour
 {
 
     public float moveSpeed = 7f;
-    public float rotSpeed = 100f;
+    public float rotSpeed = 300f;
 
     private bool isWandering = false;
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (isWandering == false)
         {
-            StartCoroutine("StartPulsing");
-
+            StartCoroutine(StartPulsing());
             StartCoroutine(Wander());
-
         }
+
         if (isRotatingRight == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
         }
+
         if (isRotatingLeft == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
         }
+
         if (isWalking == true)
         {
-
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
         }
 
     }
 
+    //This is where random walking and turning taking place
     IEnumerator Wander()
     {
         int rotTime = Random.Range(1, 2);
@@ -55,80 +48,82 @@ public class WanderAI : MonoBehaviour
         int walkTime = Random.Range(1, 3);
 
         isWandering = true;
-
         yield return new WaitForSeconds(walkWait);
+
         isWalking = true;
         yield return new WaitForSeconds(walkTime);
+
         isWalking = false;
         yield return new WaitForSeconds(rotateWait);
-        StartCoroutine("StartShrink");
+
 
         if (rotateLorR == 1)
         {
             isRotatingRight = true;
             yield return new WaitForSeconds(rotTime);
+
             isRotatingRight = false;
         }
+
         if (rotateLorR == 2)
         {
             isRotatingLeft = true;
             yield return new WaitForSeconds(rotTime);
+
             isRotatingLeft = false;
         }
-        isWandering = false;
 
+        isWandering = false;
     }
+
+    //This is for the pusling effect of the cube
     private IEnumerator StartPulsing()
     {
-
+        float rotateWait = Random.Range(0, 1f);
+        yield return new WaitForSeconds(rotateWait);
 
         for (float i = 0f; i <= 1f; i += 0.1f)
         {
             transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.070f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(0.007f);
         }
 
         for (float i = 0f; i >= 1f; i += 0.1f)
         {
             transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.030f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(0.005f);
         }
-
-
-    }
-
-    private IEnumerator StartShrink()
-    {
 
 
         for (float i = 0f; i <= 1f; i += 0.1f)
         {
             transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.070f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(0.007f);
         }
 
         for (float i = 0f; i >= 1f; i += 0.1f)
         {
             transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.030f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(0.005f);
         }
 
 
     }
+
 }
