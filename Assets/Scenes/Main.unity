@@ -1054,16 +1054,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 1132589861378796934, guid: bf8f7bdff8650e042a3c355613652a27,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e03ebcd6a42240f4d9e5c14a5cc6fe20, type: 2}
-    - target: {fileID: 1132589861378796931, guid: bf8f7bdff8650e042a3c355613652a27,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 1132589861378796930, guid: bf8f7bdff8650e042a3c355613652a27,
         type: 3}
       propertyPath: player
@@ -1097,6 +1087,16 @@ PrefabInstance:
       propertyPath: bookShelf
       value: 
       objectReference: {fileID: 901646999}
+    - target: {fileID: 1132589861378796934, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e03ebcd6a42240f4d9e5c14a5cc6fe20, type: 2}
+    - target: {fileID: 1132589861378796931, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3762621435535592860, guid: bf8f7bdff8650e042a3c355613652a27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf8f7bdff8650e042a3c355613652a27, type: 3}
@@ -1498,16 +1498,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 1132589861378796934, guid: bf8f7bdff8650e042a3c355613652a27,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e03ebcd6a42240f4d9e5c14a5cc6fe20, type: 2}
-    - target: {fileID: 1132589861378796931, guid: bf8f7bdff8650e042a3c355613652a27,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 1132589861378796930, guid: bf8f7bdff8650e042a3c355613652a27,
         type: 3}
       propertyPath: player
@@ -1541,6 +1531,16 @@ PrefabInstance:
       propertyPath: bookShelf
       value: 
       objectReference: {fileID: 901646999}
+    - target: {fileID: 1132589861378796934, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e03ebcd6a42240f4d9e5c14a5cc6fe20, type: 2}
+    - target: {fileID: 1132589861378796931, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3762621435535592860, guid: bf8f7bdff8650e042a3c355613652a27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf8f7bdff8650e042a3c355613652a27, type: 3}
@@ -2645,6 +2645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379058774011721601, guid: 4466746f6ba38b64aa1d92879a9f4e88,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4466746f6ba38b64aa1d92879a9f4e88, type: 3}
