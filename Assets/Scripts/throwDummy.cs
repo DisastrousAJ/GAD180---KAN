@@ -13,6 +13,7 @@ public class throwDummy : MonoBehaviour
     public LineRenderer line;
     public int lineSegment = 30;
     private Camera Mcam;
+    
 
     public float coolDownShot = 2;
     public float nextFire = 0;
@@ -23,6 +24,8 @@ public class throwDummy : MonoBehaviour
         Mcam = Camera.main;
         line.positionCount = lineSegment;
     }
+
+   
 
     // Update is called once per frame
     void Update()
