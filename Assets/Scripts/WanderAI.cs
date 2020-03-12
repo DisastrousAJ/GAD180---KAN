@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class WanderAI : MonoBehaviour
 {
-    public float moveSpeed = 10f;
+
+    public float moveSpeed = 7f;
     public float rotSpeed = 100f;
 
-    
     private bool isWandering = false;
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +23,12 @@ public class WanderAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         if (isWandering == false)
         {
+            StartCoroutine("StartPulsing");
+
             StartCoroutine(Wander());
+
         }
         if (isRotatingRight == true)
         {
@@ -38,18 +40,19 @@ public class WanderAI : MonoBehaviour
         }
         if (isWalking == true)
         {
+
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
         }
+
     }
 
     IEnumerator Wander()
     {
-        int rotTime = Random.Range(1, 3);
-        int rotateWait = Random.Range(1, 3);
-        int rotateLorR = Random.Range(1, 3);
-        int walkWait = Random.Range(1, 4);
+        int rotTime = Random.Range(1, 2);
+        int rotateWait = Random.Range(1, 2);
+        int rotateLorR = Random.Range(1, 2);
+        int walkWait = Random.Range(1, 3);
         int walkTime = Random.Range(1, 3);
-
 
         isWandering = true;
 
@@ -58,6 +61,8 @@ public class WanderAI : MonoBehaviour
         yield return new WaitForSeconds(walkTime);
         isWalking = false;
         yield return new WaitForSeconds(rotateWait);
+        StartCoroutine("StartShrink");
+
         if (rotateLorR == 1)
         {
             isRotatingRight = true;
@@ -73,6 +78,57 @@ public class WanderAI : MonoBehaviour
         isWandering = false;
 
     }
+    private IEnumerator StartPulsing()
+    {
 
 
+        for (float i = 0f; i <= 1f; i += 0.1f)
+        {
+            transform.localScale = new Vector3(
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                );
+            yield return new WaitForSeconds(0.015f);
+        }
+
+        for (float i = 0f; i >= 1f; i += 0.1f)
+        {
+            transform.localScale = new Vector3(
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                );
+            yield return new WaitForSeconds(0.015f);
+        }
+
+
+    }
+
+    private IEnumerator StartShrink()
+    {
+
+
+        for (float i = 0f; i <= 1f; i += 0.1f)
+        {
+            transform.localScale = new Vector3(
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                );
+            yield return new WaitForSeconds(0.015f);
+        }
+
+        for (float i = 0f; i >= 1f; i += 0.1f)
+        {
+            transform.localScale = new Vector3(
+                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.020f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.020f, Mathf.SmoothStep(0f, 1f, 1)))
+                );
+            yield return new WaitForSeconds(0.015f);
+        }
+
+
+    }
 }
