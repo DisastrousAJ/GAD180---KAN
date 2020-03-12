@@ -110,6 +110,6 @@ public class Mantis : MonoBehaviour
         this.transform.position = Vector3.MoveTowards(this.transform.position, bookShelf.transform.position, -0.02f);
     }
 
+    
 
-	
 }
