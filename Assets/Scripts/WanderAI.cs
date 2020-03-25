@@ -12,7 +12,7 @@ public class WanderAI : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
-
+    public GameObject ChildMesh;
     void Update()
     {
         if (isWandering == false)
@@ -84,20 +84,20 @@ public class WanderAI : MonoBehaviour
 
         for (float i = 0f; i <= 1f; i += 0.1f)
         {
-            transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.070f, Mathf.SmoothStep(0f, 1f, 1)))
+            ChildMesh.transform.localScale = new Vector3(
+                (Mathf.Lerp(ChildMesh.transform.localScale.x, ChildMesh.transform.localScale.x + 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.y, ChildMesh.transform.localScale.y + 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.z, ChildMesh.transform.localScale.z + 0.070f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
             yield return new WaitForSeconds(0.007f);
         }
 
         for (float i = 0f; i >= 1f; i += 0.1f)
         {
-            transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x + 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y + 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z + 0.030f, Mathf.SmoothStep(0f, 1f, 1)))
+            ChildMesh.transform.localScale = new Vector3(
+                (Mathf.Lerp(ChildMesh.transform.localScale.x, ChildMesh.transform.localScale.x + 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.y, ChildMesh.transform.localScale.y + 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.z, ChildMesh.transform.localScale.z + 0.030f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
             yield return new WaitForSeconds(0.005f);
         }
@@ -105,25 +105,24 @@ public class WanderAI : MonoBehaviour
 
         for (float i = 0f; i <= 1f; i += 0.1f)
         {
-            transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.070f, Mathf.SmoothStep(0f, 1f, 1)))
+            ChildMesh.transform.localScale = new Vector3(
+                (Mathf.Lerp(ChildMesh.transform.localScale.x, ChildMesh.transform.localScale.x - 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.y, ChildMesh.transform.localScale.y - 0.070f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.z, ChildMesh.transform.localScale.z - 0.070f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
             yield return new WaitForSeconds(0.007f);
         }
 
         for (float i = 0f; i >= 1f; i += 0.1f)
         {
-            transform.localScale = new Vector3(
-                (Mathf.Lerp(transform.localScale.x, transform.localScale.x - 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.y, transform.localScale.y - 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
-                (Mathf.Lerp(transform.localScale.z, transform.localScale.z - 0.030f, Mathf.SmoothStep(0f, 1f, 1)))
+            ChildMesh.transform.localScale = new Vector3(
+                (Mathf.Lerp(ChildMesh.transform.localScale.x, ChildMesh.transform.localScale.x - 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.y, ChildMesh.transform.localScale.y - 0.030f, Mathf.SmoothStep(0f, 1f, 1))),
+                (Mathf.Lerp(ChildMesh.transform.localScale.z, ChildMesh.transform.localScale.z - 0.030f, Mathf.SmoothStep(0f, 1f, 1)))
                 );
             yield return new WaitForSeconds(0.005f);
         }
 
 
     }
-
 }

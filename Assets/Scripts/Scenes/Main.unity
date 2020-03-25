@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43748948, g: 0.48531055, b: 0.56558484, a: 1}
+  m_IndirectSpecularColor: {r: 0.4374901, g: 0.4853112, b: 0.56558615, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -895,6 +895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baby (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1132589861378796937, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1132589861378796932, guid: bf8f7bdff8650e042a3c355613652a27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1293,6 +1298,60 @@ Transform:
   m_Father: {fileID: 369237762}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059378201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1132589861378796937, guid: bf8f7bdff8650e042a3c355613652a27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1150511907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1059378202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059378201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f623103cce0ac3c47a97b09abd38f8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destination: {fileID: 0}
+--- !u!195 &1059378203
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059378201}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.50000197
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.999999
+  m_BaseOffset: 0.4999995
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!135 &1059378204
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059378201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0.0000019073486, y: -0.00000047683716, z: 0}
 --- !u!4 &1064299495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1132589861378796932, guid: bf8f7bdff8650e042a3c355613652a27,
@@ -1310,6 +1369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Baby (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132589861378796937, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1132589861378796932, guid: bf8f7bdff8650e042a3c355613652a27,
         type: 3}
@@ -1438,6 +1502,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Baby
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132589861378796937, guid: bf8f7bdff8650e042a3c355613652a27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1132589861378796932, guid: bf8f7bdff8650e042a3c355613652a27,
         type: 3}
