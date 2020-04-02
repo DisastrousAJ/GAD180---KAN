@@ -8,6 +8,9 @@ TagManager:
   - Floor
   - Baby
   - Wall
+  - Agent1
+  - Agent2
+  - Agent3
   layers:
   - Default
   - TransparentFX

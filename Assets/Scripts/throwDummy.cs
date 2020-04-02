@@ -6,32 +6,35 @@ using UnityEngine.UI;
 
 public class throwDummy : MonoBehaviour
 {
+    [Header("Pacifier & Aim")]
     public Rigidbody dummy;
     public GameObject cursor;
     public Transform throwPoint;
+    [Space(5)]
+
+    [Header("Line Segment for Aim")]
     public LayerMask layer;
     public LineRenderer line;
     public int lineSegment = 30;
-    private Camera Mcam;
-    
+    [Space(5)]
 
+    private Camera Mcam;
+
+    [Header("Fire Rate")]
     public float coolDownShot = 2;
     public float nextFire = 0;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         Mcam = Camera.main;
         line.positionCount = lineSegment;
     }
-
-   
-
-    // Update is called once per frame
+    
     void Update()
     {
         DummyThrow();
     }
+
     void DummyThrow()
     {
         //Accessing the main camera
@@ -48,7 +51,7 @@ public class throwDummy : MonoBehaviour
 
             Visualize(Velo);
 
-            transform.rotation = Quaternion.LookRotation(Velo);
+            transform.rotation = Quaternion.LookRotation(Velo);     //this line makes the pacifier sway or move
 
             //Left click spawns projectile at raycast position
             //Fire rate
@@ -61,16 +64,15 @@ public class throwDummy : MonoBehaviour
 
                     //Fire rate counter
                     nextFire = Time.time + coolDownShot;
-                }               
-                                  
+                }                                   
             }   
         }
         else
         {
             cursor.SetActive(false);
         }
-
     }
+
     void Visualize(Vector3 vo) //This is for the trajectory linesegment visual
     {
         for (int i = 0; i < lineSegment; i++)
