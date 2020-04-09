@@ -49,8 +49,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
-  m_Center: {x: 0, y: -0.058571815, z: 0.287539}
+  m_Radius: 0.50598145
+  m_Center: {x: 0.072098315, y: -0.11997986, z: 0.287539}
 --- !u!54 &61594693680632111
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6ef6952baab0c4daea9b45881d4c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEffect: {fileID: 100004, guid: 4f1e87ee37fd9904b8aa23d71ab1b9a1, type: 3}
 --- !u!1 &2684434979075089918
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 146eb52b7e5e9e04198f9f2220c1667f, type: 2}
+  - {fileID: 2100000, guid: fd56a0b23d9ab93438b231bb6b92fea2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -382,7 +383,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 146eb52b7e5e9e04198f9f2220c1667f, type: 2}
+  - {fileID: 2100000, guid: cab6459433c79e14595fb823afef00f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Mantis : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject cot;
-    public GameObject chest;
-    public GameObject bookShelf;
+    //the main cause of this script is to repell destinationchange script defined game objects
+
+    GameObject player;
+    GameObject cot;
+    GameObject chest;
+    GameObject bookShelf;
+    GameObject crib;
 
     void Start()
     {
@@ -15,12 +18,12 @@ public class Mantis : MonoBehaviour
         cot = GameObject.Find("Cot");
         chest = GameObject.Find("Chest");
         bookShelf = GameObject.Find("BookShelf");
+        crib = GameObject.Find("Crib");
     }
   
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
-        //float distanceToFood = Vector3.Distance(this.transform.position, food.transform.position);
 
         if (distanceToPlayer < 2)
         {
@@ -67,6 +70,18 @@ public class Mantis : MonoBehaviour
         {
             Idle();
         }
+
+        float distanceToCrib = Vector3.Distance(this.transform.position, crib.transform.position);
+
+        if (distanceToCrib < 2)
+        {
+            AvoidCrib();
+        }
+
+        else
+        {
+            Idle();
+        }
     }
 
     void Idle()
@@ -94,6 +109,8 @@ public class Mantis : MonoBehaviour
         this.transform.position = Vector3.MoveTowards(this.transform.position, bookShelf.transform.position, -0.01f);
     }
 
-    
-
+    void AvoidCrib()
+    {
+        this.transform.position = Vector3.MoveTowards(this.transform.position, crib.transform.position, -0.01f);
+    }
 }

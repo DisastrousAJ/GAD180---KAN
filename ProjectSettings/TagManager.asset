@@ -11,6 +11,10 @@ TagManager:
   - Agent1
   - Agent2
   - Agent3
+  - BookShelf
+  - Chest
+  - Cot
+  - Crib
   layers:
   - Default
   - TransparentFX

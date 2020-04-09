@@ -23,7 +23,7 @@ public class throwDummy : MonoBehaviour
     [Header("Fire Rate")]
     public float coolDownShot = 2;
     public float nextFire = 0;
-    
+      
     void Start()
     {
         Mcam = Camera.main;
@@ -59,11 +59,12 @@ public class throwDummy : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    soundManagerScript.PlaySound("click1"); //sound when input
+
                     Rigidbody pacifier = Instantiate(dummy, throwPoint.position, Quaternion.identity);
                     pacifier.velocity = Velo;
-
-                    //Fire rate counter
-                    nextFire = Time.time + coolDownShot;
+                    
+                    nextFire = Time.time + coolDownShot; //Fire rate counter
                 }                                   
             }   
         }

@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class CharacterAgent : MonoBehaviour
 {
+    //this si the controll for navMesh
+    
     public GameObject charachterDestination;
     NavMeshAgent theAgent;
    

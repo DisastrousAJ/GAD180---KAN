@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestinationChange : MonoBehaviour
 {
+    //this script is to randomly guide agents to next destination uppon colliding to game object specified
+
     public int xPos;
     public int zPos;
 
@@ -11,24 +13,24 @@ public class DestinationChange : MonoBehaviour
     {
         if (other.tag == "Agent1")
         {
-            xPos = Random.Range(-8, 9);
-            zPos = Random.Range(-1, -12);
+            xPos = Random.Range(-7, 7);
+            zPos = Random.Range(-1, -14);
 
             this.gameObject.transform.position = new Vector3(xPos, 5.6f, zPos);
         }
 
         if (other.tag == "Agent2")
         {
-            xPos = Random.Range(-8, 9);
-            zPos = Random.Range(-1, -12);
+            xPos = Random.Range(-7, 7);
+            zPos = Random.Range(-1, -14);
 
             this.gameObject.transform.position = new Vector3(xPos, 5.6f, zPos);
         }
 
         if (other.tag == "Agent3")
         {
-            xPos = Random.Range(-8, 9);
-            zPos = Random.Range(-1, -12);
+            xPos = Random.Range(-7, 7);
+            zPos = Random.Range(-1, -14);
 
             this.gameObject.transform.position = new Vector3(xPos, 5.6f, zPos);
         }

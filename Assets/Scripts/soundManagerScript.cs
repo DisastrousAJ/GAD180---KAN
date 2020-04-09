@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class soundManagerScript : MonoBehaviour
 {
-    public static AudioClip timerSound;
+    //all the sound effects except manager background music
+
+    public static AudioClip timerSound, floorClip, clickTwo, floorBall, clickOne, giggles;
     static AudioSource beep;
     void Start()
     {
         timerSound = Resources.Load<AudioClip>("Alarm");
+        floorClip = Resources.Load<AudioClip>("floor");
+        clickTwo = Resources.Load<AudioClip>("click2");
+        clickOne = Resources.Load<AudioClip>("click1");
+        floorBall = Resources.Load<AudioClip>("ball");
+        
         beep = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public static void PlaySound (string clip)
     {
         switch (clip)
@@ -24,6 +26,24 @@ public class soundManagerScript : MonoBehaviour
             case "Alarm":
                 beep.PlayOneShot(timerSound);
                 break;
+
+            case "floor":
+                beep.PlayOneShot(floorClip);
+                break;
+
+            case "click2":
+                beep.PlayOneShot(clickTwo);
+                break;
+
+            case "click1":
+                beep.PlayOneShot(clickOne);
+                break;
+
+            case "ball":
+                beep.PlayOneShot(floorBall);
+                break;
+
+            
         }
     }
 }
