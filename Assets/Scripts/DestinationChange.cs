@@ -16,7 +16,7 @@ public class DestinationChange : MonoBehaviour
             xPos = Random.Range(-7, 7);
             zPos = Random.Range(-1, -14);
 
-            this.gameObject.transform.position = new Vector3(xPos, 5.6f, zPos);
+            this.gameObject.transform.position = new Vector3(xPos, 5.85f, zPos);
         }
 
         if (other.tag == "Agent2")
@@ -24,7 +24,7 @@ public class DestinationChange : MonoBehaviour
             xPos = Random.Range(-7, 7);
             zPos = Random.Range(-1, -14);
 
-            this.gameObject.transform.position = new Vector3(xPos, 5.6f, zPos);
+            this.gameObject.transform.position = new Vector3(xPos, 5.85f, zPos);
         }
 
         if (other.tag == "Agent3")
@@ -32,7 +32,7 @@ public class DestinationChange : MonoBehaviour
             xPos = Random.Range(-7, 7);
             zPos = Random.Range(-1, -14);
 
-            this.gameObject.transform.position = new Vector3(xPos, 5.6f, zPos);
+            this.gameObject.transform.position = new Vector3(xPos, 5.85f, zPos);
         }
     }
 }
