@@ -16,15 +16,11 @@ public class Teleport : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision other)
     {
-       // if ()
-       // {
-            col.transform.position = new Vector3(Random.Range(-13.0f, 15.0f), col.transform.position.y, Random.Range(-14.0f, 12.0f));
-       // }
-       // else if ()
-       // {
-
-        //}
+       if (other.gameObject.tag == "Chest")
+        {
+            other.transform.position = new Vector3(Random.Range(-13.0f, 15.0f), other.transform.position.y, Random.Range(-14.0f, 12.0f));
+        }
     }    
 }

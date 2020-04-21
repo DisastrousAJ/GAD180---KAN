@@ -114,5 +114,4 @@ public class throwDummy : MonoBehaviour
         result.y = sY;
         return result;
     }
-
 }
