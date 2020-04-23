@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class endScoreScript : MonoBehaviour
+public class EndScoreScript : MonoBehaviour
 {
     public static int tempscoreValue= 0;
     Text score;

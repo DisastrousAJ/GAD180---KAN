@@ -9,21 +9,21 @@ public class ChickDestroy : MonoBehaviour
 
         if (other.gameObject.CompareTag("Agent1"))
         {
-            soundManagerScript.PlaySound("click2"); //for the sound
+            SoundManagerScript.PlaySound("click2"); //for the sound
             ScoreScript.scoreValue += 1; //for the score
             other.gameObject.SetActive(true); //for the collision
         }
   
         if (other.gameObject.CompareTag("Agent2"))
         {
-            soundManagerScript.PlaySound("click2");
+            SoundManagerScript.PlaySound("click2");
             ScoreScript.scoreValue += 1;
             other.gameObject.SetActive(true);
         }
         
         if (other.gameObject.CompareTag("Agent3"))
         {
-            soundManagerScript.PlaySound("click2");
+            SoundManagerScript.PlaySound("click2");
             ScoreScript.scoreValue += 1;
             other.gameObject.SetActive(true);
         }

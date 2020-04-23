@@ -32,7 +32,7 @@ public class CountdownTimer : MonoBehaviour
 
 		if (currentTime <= 5)
 		{
-			soundManagerScript.PlaySound("Alarm");
+			SoundManagerScript.PlaySound("Alarm");
 			countdownText.color = Color.red;
 		}
 

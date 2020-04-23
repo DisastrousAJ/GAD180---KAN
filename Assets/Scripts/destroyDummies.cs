@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class destroyDummies : MonoBehaviour
+public class DestroyDummies : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
@@ -11,7 +11,7 @@ public class destroyDummies : MonoBehaviour
 
         if (other.gameObject.tag == "Floor")
         {
-            soundManagerScript.PlaySound("ball");
+            SoundManagerScript.PlaySound("ball");
             Destroy(gameObject, 0.5f);
         }
 
@@ -19,17 +19,17 @@ public class destroyDummies : MonoBehaviour
 
         if (other.gameObject.tag == "BookShelf")
         {
-            soundManagerScript.PlaySound("floor");
+            SoundManagerScript.PlaySound("floor");
         }
 
         if (other.gameObject.tag == "Chest")
         {
-            soundManagerScript.PlaySound("floor");
+            SoundManagerScript.PlaySound("floor");
         }
 
         if (other.gameObject.tag == "Cot")
         {
-            soundManagerScript.PlaySound("floor");
+            SoundManagerScript.PlaySound("floor");
         }
     }
 }

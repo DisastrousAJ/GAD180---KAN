@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class soundManagerScript : MonoBehaviour
-{
+public class SoundManagerScript : MonoBehaviour
+{  
     //all the sound effects except manager background music
 
     public static AudioClip timerSound, floorClip, clickTwo, floorBall, clickOne, giggles;

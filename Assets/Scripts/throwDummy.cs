@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class throwDummy : MonoBehaviour
+public class ThrowDummy : MonoBehaviour
 {
     [Header("Pacifier & Aim")]
     public Rigidbody dummy;
@@ -59,7 +59,7 @@ public class throwDummy : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    soundManagerScript.PlaySound("click1"); //sound when input
+                    SoundManagerScript.PlaySound("click1"); //sound when input
 
                     Rigidbody pacifier = Instantiate(dummy, throwPoint.position, Quaternion.identity);
                     pacifier.velocity = Velo;
