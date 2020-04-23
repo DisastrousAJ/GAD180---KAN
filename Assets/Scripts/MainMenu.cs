@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 	public void QuitGame()
 	{
 		//this is to emphasize that the game quit aside from making a line code Application.Quit()
-		SceneManager.LoadScene("ThankYou", LoadSceneMode.Single);
+		SceneManager.LoadScene("Credits", LoadSceneMode.Single);
 	}
 
 	public void RetryGame()
