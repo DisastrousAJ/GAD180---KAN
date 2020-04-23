@@ -17,8 +17,8 @@ public class MainMenu : MonoBehaviour
 	}
 
 	public void RetryGame()
-	{		
-		SceneManager.LoadScene("Main" , LoadSceneMode.Single);		
+	{
+		SceneManager.LoadScene("Main", LoadSceneMode.Single);		
 	}
 }
 
