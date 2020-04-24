@@ -12,7 +12,7 @@ public class DestroyDummies : MonoBehaviour
         if (other.gameObject.tag == "Floor")
         {
             SoundManagerScript.PlaySound("ball");
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 0.02f);
         }
 
         //this is only for the sound when it hits game object

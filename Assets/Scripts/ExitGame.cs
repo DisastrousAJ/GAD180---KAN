@@ -6,7 +6,7 @@ public class ExitGame : MonoBehaviour
 {
 	public void QuitGame()
 	{
-		UnityEngine.Debug.Log("Exit Game");
+		//UnityEngine.Debug.Log("Exit Game");
 		Application.Quit();
 	}
 }
