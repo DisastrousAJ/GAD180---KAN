@@ -31,5 +31,10 @@ public class DestroyDummies : MonoBehaviour
         {
             SoundManagerScript.PlaySound("floor");
         }
+
+        if (other.gameObject.tag == "Crib")
+        {
+            SoundManagerScript.PlaySound("floor");
+        }
     }
 }
