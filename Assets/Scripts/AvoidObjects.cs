@@ -89,9 +89,9 @@ public class AvoidObjects : MonoBehaviour
         float distanceToBook = Vector3.Distance(this.transform.position, bookShelf.transform.position);
         float distanceToCot = Vector3.Distance(this.transform.position, cot.transform.position);
 
-        this.transform.position = Vector3.MoveTowards(this.transform.position, food1.transform.position, 0.003f);
-        this.transform.position = Vector3.MoveTowards(this.transform.position, food2.transform.position, 0.003f);
-        this.transform.position = Vector3.MoveTowards(this.transform.position, food3.transform.position, 0.003f);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, food1.transform.position, 0.007f);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, food2.transform.position, 0.007f);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, food3.transform.position, 0.007f);
 
         if (distanceToCrib < 2)
         {
